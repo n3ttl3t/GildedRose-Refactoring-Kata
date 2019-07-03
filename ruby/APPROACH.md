@@ -7,7 +7,7 @@
 **To do**
 - Clone the project
 - Write up spec
-- Read exiting code, make notes on what it does
+- Read existing code, make notes on what it does
 - Refactor notes into model (CRC, flow)
 - Make tests on existing code
 - Refactor code to new model
@@ -29,7 +29,7 @@
 **3 Jul 2019 14:35 - 3 Jul 2019 15:00**
 
 **To do**
-- Read exiting code, make notes on what it does
+- Read existing code, make notes on what it does
 - Make tests on existing code
 - Refactor notes into model (CRC, flow)
 - Refactor code to new model
@@ -74,7 +74,7 @@
 **3 Jul 2019 15:13 - 3 Jul 2019 16:8**
 
 **To do**
-- Read exiting code, make notes on what it does
+- Read existing code, make notes on what it does
 - Make tests on existing code
 - Refactor notes into model (CRC, flow)
 - Refactor code to new model
@@ -102,3 +102,59 @@
 - Researched matchers
 - Asked mentor to confirm testing for state vs behaviour and feature vs unit
 - Split tests into feature and unit files
+
+### Session 04
+
+**3 Jul 2019 16:27 - 3 Jul 2019 16:48**
+
+**To do**
+- Make tests on existing code
+- Read existing code, make notes on what it does
+- Refactor notes into model (CRC, flow)
+- Refactor code to new model
+- Ensure all tests are passing
+
+**Done**
+- Changed priority of to do list
+- Tested Aged Brie behaviour in IRB:
+    ```
+    > items = [Item.new("Aged Brie", 10, 5)]
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=10, @quality=5>] 
+    2.6.0 :002 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=9, @quality=6>] 
+    2.6.0 :003 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=8, @quality=7>] 
+    2.6.0 :004 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=7, @quality=8>] 
+    2.6.0 :005 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=6, @quality=9>] 
+    2.6.0 :006 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=5, @quality=10>] 
+    2.6.0 :007 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=4, @quality=11>] 
+    2.6.0 :008 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=3, @quality=12>] 
+    2.6.0 :009 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=2, @quality=13>] 
+    2.6.0 :010 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=1, @quality=14>] 
+    2.6.0 :011 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=0, @quality=15>] 
+    2.6.0 :012 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=-1, @quality=17>] 
+    2.6.0 :013 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=-2, @quality=19>] 
+    ```
+    This showed that Aged Brie does go up in quality as it gets older.
+- Wrote a passing test for Aged Brie
+- Tested the quality limit in IRB:
+    ```
+    GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=-17, @quality=49>] 
+    2.6.0 :029 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=-18, @quality=50>] 
+    2.6.0 :030 > GildedRose.new(items).update_quality()
+    => [#<Item:0x00007fb93513f8d0 @name="Aged Brie", @sell_in=-19, @quality=50>] 
+    ```
+    This showed that it cannot increase past 50.
+- Wrote a passing test for quality limit
