@@ -12,7 +12,7 @@
     - The Quality of an item is never negative
     - "Aged Brie" actually increases in Quality the older it gets
     - The Quality of an item is never more than 50
-    - "Sulfuras", being a legendary item, never has to be sold and never decreases in Quality
+    - "Sulfuras", being a legendary item, never has to be sold and never decreases in Quality from 80
     - "Backstage passes", like aged brie, increase in Quality as it's SellIn value approaches; Quality increases by 2 when there are 10 days left and by 3 when there are 5 days left, but quality drops to 0 when there are no days left
 
 **The new feature** causes items flagged as 'conjured' to degrade in Quality twice as fast.
